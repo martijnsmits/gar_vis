@@ -33,12 +33,16 @@ if __name__ == "__main__":
     # Or use an existing neighbourhood
     file_path = "path_to_file/file_name.h5"
 
-    # And start the visulisation tool (min_rel )
+    # And start the visulisation tool (min_rel is used to set the minimum relevance label to consider the document relevant)
     app = NeighbourViewer(file_path, dataset, min_rel=2)
     app.mainloop()
 ```
 
 ## Citation
 ```bibtex
-    TODO
+@inproceedings{rear2025,
+    title = {Resource Efficient Adaptive Retrieval},
+    author = {Martijn Smits},
+    year = {2025},
+}
 ```
