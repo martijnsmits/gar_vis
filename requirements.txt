@@ -1,0 +1,6 @@
+python-terrier
+pyterrier-adaptive
+pyterrier-pisa
+h5py
+matplotlib
+seaborn
