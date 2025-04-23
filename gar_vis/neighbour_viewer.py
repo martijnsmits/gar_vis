@@ -9,12 +9,12 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.colors import ListedColormap
 import seaborn as sns
 
-import util
-from util import Style
+from . import util
+from .util import Style
 
 
 class NeighbourViewer(tk.Tk):
-    def __init__(self, file_path, dataset, min_rel=1):
+    def __init__(self, file_path, dataset, min_rel):
         super().__init__()
 
         # Initialise parameters

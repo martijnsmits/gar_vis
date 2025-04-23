@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gar-vis"
+description = "Visualisation tool for Corpus Graphs"
+authors = [
+    {name = "Martijn Smits"},
+]
+version = "0.1.0"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["information retrieval", "corpus graph", "visualisation"]
+requires-python = ">=3.8"
+dependencies = [
+    "python-terrier >= 0.10.0, < 1",
+    "pyterrier-adaptive >= 0.1.0, < 1",
+    "pyterrier-pisa >= 0.1.0, < 1",
+    "h5py >= 3.0.0, < 4",
+    "matplotlib >= 3.7.0, < 4",
+    "seaborn >= 0.13.2, < 1",
+    "numpy >= 1.24.0, < 2",
+    "pandas >= 2.0.3, < 3",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository = "https://github.com/martijnsmits/gar_vis"

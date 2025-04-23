@@ -1,6 +1,7 @@
 import pandas as pd
 from enum import Enum
 import tkinter as tk
+import numpy as np
 
 
 class Style(str, Enum):
@@ -10,6 +11,19 @@ class Style(str, Enum):
     REL_DOC = "lightgray"
     REL_DOC_NEW = "lime"
     REL_DOC_DUPE = "lightcoral"
+
+
+def append_neighbours(ranking, qid, corpus_graph):
+    df = ranking[ranking["qid"] == qid]
+    neighbourhood = np.array(
+        [_get_neighbours(docno, corpus_graph) for docno in df["docno"]]
+    ).astype("S21")
+    return neighbourhood
+
+
+def _get_neighbours(docid, corpus_graph):
+    neighbours = [docid] + [int(n) for n in corpus_graph.neighbours(docid)]
+    return neighbours
 
 
 def get_color_scale(neighbourhood):
