@@ -1,6 +1,5 @@
 import pandas as pd
 from enum import Enum
-import tkinter as tk
 import numpy as np
 
 
@@ -108,8 +107,3 @@ def update_stats(neighbourhood, original_ranking, qrels):
 
 def get_recall(rel_docs, docs):
     return float(len(set(rel_docs).intersection(docs)) / len(set(rel_docs)))
-
-
-def create_label(stats_label, title, variable):
-    stats_label.insert(tk.END, f"{title}: ", Style.TITLE)
-    stats_label.insert(tk.END, f"{variable}\n", Style.VARIABLE)

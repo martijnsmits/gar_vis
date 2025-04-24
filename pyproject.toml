@@ -8,7 +8,7 @@ description = "Visualisation tool for Corpus Graphs"
 authors = [
     {name = "Martijn Smits"},
 ]
-version = "0.1.0"
+version = "0.1.2"
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = ["information retrieval", "corpus graph", "visualisation"]

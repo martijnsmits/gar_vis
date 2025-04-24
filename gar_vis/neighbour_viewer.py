@@ -205,11 +205,11 @@ class NeighbourViewer(tk.Tk):
         nb_recall = stats["neighbour_recall"]
         combined_recall = stats["total_recall"]
 
-        util.create_label(self.stats_label, "Query ID", qid)
-        util.create_label(self.stats_label, "Query", self.topics[qid])
-        util.create_label(self.stats_label, "Original Recall", original_recall)
-        util.create_label(self.stats_label, "Neighbour Recall", nb_recall)
-        util.create_label(self.stats_label, "Total Recall", combined_recall)
+        self._create_label("Query ID", qid)
+        self._create_label("Query", self.topics[qid])
+        self._create_label("Original Recall", original_recall)
+        self._create_label("Neighbour Recall", nb_recall)
+        self._create_label("Total Recall", combined_recall)
 
         rel_docs_counts = stats["rel_docs_counts"]
         is_new_document = stats["is_new_document"]
@@ -240,3 +240,7 @@ class NeighbourViewer(tk.Tk):
         self.stats_label.tag_configure("lightgray", foreground="lightgray")
         self.stats_label.tag_configure("lime", foreground="lime")
         self.stats_label.tag_configure("lightcoral", foreground="light coral")
+
+    def _create_label(self, title, variable):
+        self.stats_label.insert(tk.END, f"{title}: ", Style.TITLE)
+        self.stats_label.insert(tk.END, f"{variable}\n", Style.VARIABLE)
