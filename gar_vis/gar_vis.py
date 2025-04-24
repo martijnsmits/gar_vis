@@ -4,7 +4,6 @@ import pyterrier as pt
 from pyterrier_adaptive import CorpusGraph
 
 from .util import append_neighbours
-from .neighbour_viewer import NeighbourViewer
 
 
 class GarVis:
@@ -33,5 +32,8 @@ class GarVis:
         return file_path
 
     def visualise_neighbourhood(file_path, dataset, min_rel=1):
+        # Import it here, so that Python versions without Tkinter don't need to install it
+        from .neighbour_viewer import NeighbourViewer
+
         app = NeighbourViewer(file_path, dataset, min_rel=min_rel)
         app.mainloop()
